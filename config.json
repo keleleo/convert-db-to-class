@@ -1,0 +1,14 @@
+{
+  "convert":{
+    "lang": "JS",
+    "db": "PostgreSql"
+  },
+  "connection":{
+    "port": 5432,
+    "host": "localhost",
+    "database": "db-teste",
+    "user": "postgres",
+    "password": "root",
+    "ssl": false
+  }
+}
