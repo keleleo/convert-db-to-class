@@ -25,11 +25,12 @@ export abstract class BuilderBase {
   }
 
 
-  protected formatColumn(name: string): string {
-    return name.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase())
+  formatColumn(name: string): string {
+    return (name.length > 2 ? name.replace(/^id/, '') : name)
+      .replace(/_([a-z])/g, (match, letter) => letter.toUpperCase())
   }
 
-  protected formatTable(name: string): string {
+  formatTable(name: string): string {
     return name.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase())
       .replace(/^([a-z])/, (match, letter) => letter.toUpperCase())
   }

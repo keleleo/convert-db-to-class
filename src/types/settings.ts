@@ -8,5 +8,6 @@ export enum DBType {
 }
 
 export enum LangType {
-  'JS' = 'JS'
+  'JS' = 'JS',
+  'TS' = 'TS'
 }

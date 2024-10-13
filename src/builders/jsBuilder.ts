@@ -9,7 +9,7 @@ export class JsBuilder extends BuilderBase {
       const clss = this.createClass(cd)
 
       yield {
-        name: this.formatTable(cd[0].tableName),
+        name: this.formatTable(cd[0].tableName) + '.js',
         content: clss
       } as FileData
     }
@@ -40,5 +40,5 @@ export class JsBuilder extends BuilderBase {
     return temp[type]
   }
 
-  
+
 }

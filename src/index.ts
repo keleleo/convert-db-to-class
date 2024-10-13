@@ -1,4 +1,5 @@
 import { JsBuilder } from './builders/jsBuilder';
+import { TsBuilder } from './builders/tsBuilder';
 import { Postgres } from './db/postgress';
 import { ColumnData } from './types/columnData';
 import { FileData } from './types/fileData';
@@ -20,7 +21,7 @@ export async function convert(config: ConvertConfigs, dbConfig: any, path: strin
 
 function getBuilder(config: ConvertConfigs) {
   if (config.lang == LangType.JS) return JsBuilder
-
+  if (config.lang == LangType.TS) return TsBuilder
   return JsBuilder
 }
 async function getData(config: ConvertConfigs, dbConfig: any): Promise<ColumnData[]> {
@@ -35,5 +36,5 @@ async function getPgData(dbSettings: PgConfig): Promise<ColumnData[]> {
 }
 
 async function createFile(fileData: FileData, path: string) {
-  await fs.writeFileSync(`${path}/${fileData.name}.js`, fileData.content)
+  await fs.writeFileSync(`${path}/${fileData.name}`, fileData.content)
 }
