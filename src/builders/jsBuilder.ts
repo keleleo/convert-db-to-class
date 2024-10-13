@@ -23,9 +23,9 @@ export class JsBuilder extends BuilderBase {
   createAttr(cd: ColumnData[]) {
     return cd.map(data => {
       return this.spc(1)
+        +`/** @type {${this.getType(data.type)}} */\n`
+        + this.spc(1)
         + this.formatColumn(data.columnName)
-        + '  //'
-        + this.getType(data.type)
 
     }).join('\n')
   }
