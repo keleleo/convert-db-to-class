@@ -14,7 +14,6 @@ export abstract class BuilderBase {
 
   public abstract build(): Generator<FileData, void, unknown>
 
-
   private pushColumnData(data: ColumnData) {
     const { tableName } = data
     if (!this._data.has(tableName)) {
